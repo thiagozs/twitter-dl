@@ -1,13 +1,13 @@
 {
-  "name": "chupa-cabra",
+  "name": "twitter-dl",
   "version": "1.0.0",
-  "description": "Downloads",
+  "description": "Download video from twitter",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "downloader"
+    "downloader, twitter, video, promise"
   ],
   "author": "Thiago Z S",
   "license": "ISC",
