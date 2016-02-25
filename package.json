@@ -1,0 +1,21 @@
+{
+  "name": "chupa-cabra",
+  "version": "1.0.0",
+  "description": "Downloads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "downloader"
+  ],
+  "author": "Thiago Z S",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "download-progress": "0.0.1",
+    "metatag-crawler": "^2.0.3",
+    "restling": "^0.9.1",
+    "underscore": "^1.8.3"
+  }
+}
