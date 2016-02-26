@@ -37,28 +37,27 @@ function parse(url) {
   });
 }
 
-function download(url) {
+function download(url, folder) {
   return new Promise((resolve, reject) => {
-    parse(url).then((result) => {
-      let urls = [{
-        url: result,
-        dest: 'downloads/' + result.split('/').pop()
-      }];
-      getfile(urls).then((result) => {
-        resolve(result);
+    try {
+      fs.accessSync(folder, fs.R_OK | fs.W_OK);
+      parse(url).then((result) => {
+        let urls = [{
+          url: result,
+          dest: folder+ '/' + result.split('/').pop()
+        }];
+        getfile(urls).then((result) => {
+          resolve(result);
+        }).catch((err) => {
+          reject(err);
+        });
       }).catch((err) => {
         reject(err);
       });
-    }).catch((err) => {
-      console.log(err);
-    });
+    } catch (err) {
+      reject(new Error('Folder not exist or not writable.'));
+    }
   });
 }
 
-let file = 'https://twitter.com/Vevo_UK/status/702605662375829505';
-
-download(file).then((result) => {
-  console.log(result);
-}).catch((err) => {
-  console.log(err);
-});
+module.exports = download

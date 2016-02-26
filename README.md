@@ -4,6 +4,7 @@ Twitter-dl videos
 ## TODO
 - [x] Download single file.
 - [ ] Download multiple files.
+- [ ] Tests
 
 ## Run this Project
 To run this project you need have installed
@@ -25,15 +26,11 @@ And then just run (develpment):
 'use strict';
 
 let ttdl = require('twitter-dl');
-ttdl.download('url_from_share_post_video');
+let folder = '/home/user/downloads';
+ttdl.download('url_from_share_post_video', folder);
 
 ...
 
-```
-
-If you want to run tests just run:
-```sh
-npm test
 ```
 
 ### License
