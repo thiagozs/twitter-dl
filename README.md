@@ -25,9 +25,16 @@ And then just run (develpment):
 ```js
 'use strict';
 
-let ttdl = require('twitter-dl');
-let folder = '/home/user/downloads';
-ttdl.download('url_from_share_post_video', folder);
+let tt = require('twitter-dl');
+
+let folder = '/tmp';
+let video = 'https://twitter.com/morenatoppp/status/702325281906925570';
+
+tt.download(video, folder).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
 
 ...
 

@@ -60,4 +60,6 @@ function download(url, folder) {
   });
 }
 
-module.exports = download
+module.exports = {
+  download:download
+}
