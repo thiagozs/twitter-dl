@@ -5,6 +5,7 @@ let scrape = require('metatag-crawler');
 let rest = require('restling');
 let Promise = require('bluebird');
 let DownloadProgress = require('download-progress');
+let fs = require('fs');
 
 function getfile(urls) {
   return new Promise((resolve, reject) => {
@@ -40,7 +41,7 @@ function parse(url) {
 function download(url, folder) {
   return new Promise((resolve, reject) => {
     try {
-      fs.accessSync(folder, fs.R_OK | fs.W_OK);
+      fs.lstatSync(folder).isDirectory();
       parse(url).then((result) => {
         let urls = [{
           url: result,
@@ -63,3 +64,12 @@ function download(url, folder) {
 module.exports = {
   download:download
 }
+
+// let folder = '/home/zilli/workspace/bla/downloads';
+// let url = 'https://twitter.com/morenatoppp/status/702325281906925570';
+//
+// download(url, folder).then((result) => {
+//   console.log(result);
+// }).catch((err) => {
+//   console.log(err);
+// });
