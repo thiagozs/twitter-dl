@@ -28,7 +28,7 @@ And then just run (develpment):
 let tt = require('twitter-dl');
 
 let folder = '/tmp';
-let video = 'https://twitter.com/morenatoppp/status/702325281906925570';
+let video = 'https://twitter.com/DierksBentley/status/703222600919588864';
 
 tt.download(video, folder).then((result) => {
   console.log(result);
